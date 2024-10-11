@@ -1,0 +1,27 @@
+os_error_signatures:
+  headers:
+    Windows:
+      - "Windows"
+      - "IIS"
+      - "ASP.NET"
+    Linux:
+      - "nginx"
+      - "Apache"
+      - "Ubuntu"
+      - "Debian"
+  errors:
+    Windows:
+      - "Windows NT"
+      - "cmd.exe"
+      - "System.ComponentModel.Win32Exception"
+      - "internal or external command"
+    Linux:
+      - "sh:.*command not found"
+      - "bash:.*command not found"
+      - "syntax error near unexpected token"
+      - "permission denied"
+      - "no such file or directory"
+      - "Segmentation fault"
+      - "cannot execute binary file"
+      - "broken pipe"
+      - "disk quota exceeded"
