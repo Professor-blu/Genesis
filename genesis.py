@@ -242,19 +242,6 @@ try:
                 logging.info(f"Vulnerability found! URL: {url} - Payload: {payload} - Response Time: {response_time:.2f} seconds")
                 print(f"{Fore.GREEN}Vulnerable: {url} - Payload: {payload} - Response Time: {response_time:.2f} seconds")
 
-            def log_report(vulnerable_urls):
-                """
-                Generate a detailed report of vulnerabilities found.
-                """
-                with open('vulnerability_report.txt', 'w') as report_file:
-                    report_file.write(f"Vulnerability Report - {time.ctime()}\n")
-                    report_file.write(f"Total vulnerabilities found: {len(vulnerable_urls)}\n\n")
-                    for url, payload, response_time in vulnerable_urls:
-                        report_file.write(f"Vulnerable URL: {url}\n")
-                        report_file.write(f"Payload: {payload}\n")
-                        report_file.write(f"Response Time: {response_time:.2f} seconds\n\n")
-
-                print(f"{Fore.CYAN}Vulnerability report generated: vulnerability_report.txt")
 
             def hash_response_content(content):
                 """
@@ -389,7 +376,6 @@ try:
                 single_url_scan = len(urls) == 1
                 start_time = time.time()
                 total_scanned = 0
-                log_report(vulnerable_urls)
 
                 try:
                     futures = []
